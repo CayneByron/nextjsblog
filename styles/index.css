@@ -1,0 +1,10 @@
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+@tailwind utilities;
+
+
+#__next > div > main > div > article > div:nth-child(5) > div > img {
+    position: relative !important;
+}
