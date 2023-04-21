@@ -8,3 +8,8 @@
 #__next > div > main > div > article > div:nth-child(5) > div > img {
     position: relative !important;
 }
+
+#__next > div > main > div > section:nth-child(2) > div.mb-8.md\:mb-16 > div > a > img {
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -9,13 +9,6 @@ import { CMS_NAME } from '../lib/constants';
 
 export default function Index({ preview, allPosts }) {
 
-  // array.sort(function(a,b){
-  //   // Turn your strings into dates, and then subtract them
-  //   // to get a value that is either negative, positive, or zero.
-  //   return new Date(b.date) - new Date(a.date);
-  // });
-
-  // const heroPost = allPosts[0];
   const heroPost = allPosts.sort(function(a, b) {
     return new Date(b.date) - new Date(a.date);
   })[0];

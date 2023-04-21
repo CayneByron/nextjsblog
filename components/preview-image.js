@@ -2,13 +2,13 @@ import ContentfulImage from './contentful-image'
 import Link from 'next/link'
 import cn from 'classnames'
 
-export default function CoverImage({ title, url, slug }) {
+export default function PreviewImage({ title, url, slug }) {
   const image = (
     <ContentfulImage
-      width={1200}
-      height={600}
+      width={400}
+      height={125}
       alt={`Cover Image for ${title}`}
-      className={cn('shadow-small', {
+      className={cn('shadow-small', 'rounded-lg', {
         'hover:shadow-medium transition-shadow duration-200': slug,
       })}
       src={url}
