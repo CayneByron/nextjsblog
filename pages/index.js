@@ -13,14 +13,12 @@ export default function Index({ preview, allPosts }) {
     return new Date(b.date) - new Date(a.date);
   })[0];
 
-  console.log('heroPost');
-  console.log(heroPost);
   const morePosts = allPosts.slice(1);
   return (
     <>
       <Layout preview={preview}>
         <Head>
-          <title>{`Next.js Blog Example with ${CMS_NAME}`}</title>
+          <title>{`{ this too shall parse }`}</title>
         </Head>
         <Container>
           <Intro />
@@ -42,7 +40,10 @@ export default function Index({ preview, allPosts }) {
 }
 
 export async function getStaticProps({ preview = false }) {
+  console.log('getStaticProps');
   const allPosts = (await getAllPostsForHome(preview)) ?? [];
+  
+  console.log(allPosts);
   return {
     props: { preview, allPosts },
   }

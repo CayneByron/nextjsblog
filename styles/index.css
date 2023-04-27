@@ -4,12 +4,39 @@
 /* purgecss end ignore */
 @tailwind utilities;
 
-
-#__next > div > main > div > article > div:nth-child(5) > div > img {
+#__next > div > main > div > article > div:nth-child(6) > div > img {
     position: relative !important;
 }
 
 #__next > div > main > div > section:nth-child(2) > div.mb-8.md\:mb-16 > div > a > img {
     margin-left: auto;
     margin-right: auto;
+}
+
+#__next > div > main > div > article > div.mb-8.md\:mb-16.sm\:mx-0 > div > img {
+    margin-left: auto;
+    margin-right: auto;
+    margin: auto;
+}
+
+#__next > div > main > div > article > iframe {
+    margin-left: auto;
+    margin-right: auto;
+    margin: auto;
+}
+
+#__next > div > main > div > section.flex-col.md\:flex-row.flex.items-center.md\:justify-between.mt-16.mb-16.md\:mb-12 > h1 {
+    white-space: nowrap;
+}
+
+#icon-bar {
+    display: flex;
+}
+
+.flex-container > div {
+    margin: 10px;
+}
+
+#email-text {
+    text-decoration: underline;
 }

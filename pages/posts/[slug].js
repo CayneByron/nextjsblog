@@ -30,7 +30,7 @@ export default function Post({ post, morePosts, preview }) {
             <article>
               <Head>
                 <title>
-                  {`${post.title + ' fart'} | Next.js Blog Example with ${CMS_NAME}`}
+                  {`${post.title}`}
                 </title>
                 <meta property="og:image" content={post.coverImage.url} />
               </Head>
@@ -40,6 +40,12 @@ export default function Post({ post, morePosts, preview }) {
                 date={post.date}
                 author={post.author}
               />
+              {post.youtubeUrl &&
+                <iframe width="560" height="315" src={post.youtubeUrl} title={post.title} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              }
+              {!post.youtubeUrl &&
+                <p></p>
+              }
               <PostBody content={post.content} />
             </article>
             <SectionSeparator />

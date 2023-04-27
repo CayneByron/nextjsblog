@@ -11,30 +11,11 @@ export default function Alert({ preview }) {
       })}
     >
       <Container>
-        <div className="py-2 text-center text-sm">
-          {preview ? (
-            <>
-              This is page is a preview.{' '}
-              <a
-                href="/api/exit-preview"
-                className="underline hover:text-cyan duration-200 transition-colors"
-              >
-                Click here
-              </a>{' '}
-              to exit preview mode.
-            </>
-          ) : (
-            <>
-              The source code for this blog is{' '}
-              <a
-                href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-                className="underline hover:text-success duration-200 transition-colors"
-              >
-                available on GitHub
-              </a>
-              .
-            </>
-          )}
+        <div id="icon-bar" className='flex-container'>
+          <div><a href='https://www.instagram.com/caynebyron/' target="_blank"><img src="https://res.cloudinary.com/di12po0kz/image/upload/v1682565220/instagram_ulnzfm.png" alt="Girl in a jacket" width="20" height="20"></img></a></div>
+          <div><a href='https://www.linkedin.com/in/caynebutt/' target="_blank"><img src="https://res.cloudinary.com/di12po0kz/image/upload/v1682565738/linkedin_lxyrck.png" alt="Girl in a jacket" width="20" height="20"></img></a></div>
+          <div><a href='https://github.com/caynebyron' target="_blank"><img src="https://res.cloudinary.com/di12po0kz/image/upload/v1682565738/github_efabo0.png" alt="Girl in a jacket" width="20" height="20"></img></a></div>
+          <div><a href='https://drive.google.com/file/d/1Cu-iPZ-mscUCG7ImhaM7vK8XX4iNPLhf/view?usp=share_link' target="_blank"><img src="https://res.cloudinary.com/di12po0kz/image/upload/v1682566308/resume_mkm7iq.png" alt="Girl in a jacket" width="20" height="20"></img></a></div>
         </div>
       </Container>
     </div>
