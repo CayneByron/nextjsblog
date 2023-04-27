@@ -1,16 +1,17 @@
-import { useRouter } from 'next/router'
-import Head from 'next/head'
-import ErrorPage from 'next/error'
-import Container from '../../components/container'
-import PostBody from '../../components/post-body'
-import MoreStories from '../../components/more-stories'
-import Header from '../../components/header'
-import PostHeader from '../../components/post-header'
-import SectionSeparator from '../../components/section-separator'
-import Layout from '../../components/layout'
-import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api'
-import PostTitle from '../../components/post-title'
-import { CMS_NAME } from '../../lib/constants'
+import { useRouter } from 'next/router';
+import Head from 'next/head';
+import ErrorPage from 'next/error';
+import Container from '../../components/container';
+import PostBody from '../../components/post-body';
+import MoreStories from '../../components/more-stories';
+import Header from '../../components/header';
+import PostHeader from '../../components/post-header';
+import SectionSeparator from '../../components/section-separator';
+import Layout from '../../components/layout';
+import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api';
+import PostTitle from '../../components/post-title';
+import { CMS_NAME } from '../../lib/constants';
+import * as React from "react";
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter()
@@ -18,6 +19,17 @@ export default function Post({ post, morePosts, preview }) {
   if (!router.isFallback && !post) {
     return <ErrorPage statusCode={404} />
   }
+
+  let videoWidth = 560;
+  React.useEffect(() => {
+    console.log("window.innerWidth", window.innerWidth);
+    if (window.innerWidth <= 768) {
+      document.getElementById("youtube-video").width = 280;
+      document.getElementById("youtube-video").height = 157;
+    }
+  }, []);
+
+  
 
   return (
     <Layout preview={preview}>
@@ -39,9 +51,10 @@ export default function Post({ post, morePosts, preview }) {
                 coverImage={post.coverImage}
                 date={post.date}
                 author={post.author}
+                youtubeUrl={post.youtubeUrl}
               />
               {post.youtubeUrl &&
-                <iframe width="560" height="315" src={post.youtubeUrl} title={post.title} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe id="youtube-video" className="" width={560} height={315} src={post.youtubeUrl} title={post.title} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
               }
               {!post.youtubeUrl &&
                 <p></p>
