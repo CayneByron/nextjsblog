@@ -5,17 +5,13 @@ module.exports = {
     domains: ['images.ctfassets.net'],
   },
   reactStrictMode: true,
-  async headers() {
-    return [
+  headers: {
+    source: "/(.*)",
+    headers: [
       {
-        source: "/(.*)",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "no-cache",
-          },
-        ],
+        key: "Cache-Control",
+        value: "no-cache",
       },
-    ];
+    ],
   },
 }
