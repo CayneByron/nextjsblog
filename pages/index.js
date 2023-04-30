@@ -46,5 +46,6 @@ export async function getStaticProps({ preview = false }) {
   console.log(allPosts);
   return {
     props: { preview, allPosts },
+    revalidate: 60,
   }
 }
