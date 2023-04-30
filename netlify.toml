@@ -5,8 +5,8 @@
   publish = ".next"
 
 [functions]
-  included_files = ["content/**"]
-  
+  included_files = ["/**"]
+
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
   ## Not needed for static site generators.
   #[[redirects]]
