@@ -22,10 +22,12 @@ export default function Post({ post, morePosts, preview }) {
 
   let videoWidth = 560;
   React.useEffect(() => {
-    console.log("window.innerWidth", window.innerWidth);
     if (window.innerWidth <= 768) {
-      document.getElementById("youtube-video").width = 280;
-      document.getElementById("youtube-video").height = 157;
+      let youTubeVideo = document.getElementById("youtube-video");
+      if (youTubeVideo) {
+        youTubeVideo.width = 280;
+        youTubeVideo.height = 157;
+      }
     }
   }, []);
 
